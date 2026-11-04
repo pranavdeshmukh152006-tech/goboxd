@@ -19,6 +19,7 @@ jobs:
           gradle-version: '8.9'
       - name: Install SDK platforms
         run: |
+          export PATH="/usr/local/lib/android/sdk/cmdline-tools/16.0/bin:$PATH"
           yes | sdkmanager --licenses > /dev/null || true
           sdkmanager "platforms;android-35" "build-tools;35.0.0"
       - name: Compile APK
